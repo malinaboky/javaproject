@@ -23,11 +23,10 @@ public class DataBase {
             "TrustGovernment DOUBLE NOT NULL, " +
             "DystopiaResidual DOUBLE NOT NULL)";
 
-
     public static void fillDataBase() {
         String sql = "INSERT INTO IndexOfHappiness VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         String tableName = "IndexOfHappiness";
-        try (Connection connection = DriverManager.getConnection("jdbc:sqlite:database.sqlite3")) {
+        try (Connection connection = DriverManager.getConnection(DB_URL)) {
             boolean exists = connection.getMetaData().getTables(null, null, tableName,null).next();
             if (!exists) {
                 try (Statement statement = connection.createStatement()) {
