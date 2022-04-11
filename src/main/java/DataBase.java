@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class DataBase {
     private static final String path = "src/main/resources/Показатель счастья по странам 2017 - Показатель счастья по странам 2017.csv";
-    private static final String DB_URL = "jdbc:sqlite:database.sqlite3";
+    private static final String DB_URL = "jdbc:sqlite::resource:database.sqlite3";
     private static final String CREATE_TABLE_QUERY = "CREATE TABLE IF NOT EXISTS IndexOfHappiness (" +
             "Country STRING PRIMARY KEY, " +
             "Region TEXT NOT NULL, " +
